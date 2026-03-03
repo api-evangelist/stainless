@@ -24,6 +24,8 @@ access: 3rd-Party
 created: '2025-01-08'
 modified: '2025-01-13'
 position: Consumer
+segments:
+  - SDKs
 description: >-
   Generate best-in-class SDKs. Developers expect your API to come with a
   typesafe client library in their language. With Stainless, you can deliver

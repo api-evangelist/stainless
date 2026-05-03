@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "stainless": "https://stainless.com/vocab/",
+    "openapi": "https://spec.openapis.org/oas/v3.1.0#",
+
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "SDKGenerator": "stainless:SDKGenerator",
+    "SDK": "stainless:SDK",
+    "DocumentationSite": "stainless:DocumentationSite",
+    "MCPServer": "stainless:MCPServer",
+    "TerraformProvider": "stainless:TerraformProvider",
+    "CLI": "stainless:CLI",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+    "language": "schema:programmingLanguage",
+    "license": "schema:license",
+
+    "inputSpec": {
+      "@id": "stainless:inputSpec",
+      "@type": "@id"
+    },
+    "outputLanguages": {
+      "@id": "stainless:outputLanguages",
+      "@container": "@set"
+    },
+    "targetLanguage": "stainless:targetLanguage",
+    "retryPolicy": "stainless:retryPolicy",
+    "pagination": "stainless:pagination",
+    "streaming": "stainless:streaming",
+    "authentication": "stainless:authentication",
+
+    "customer": {
+      "@id": "schema:customer",
+      "@type": "schema:Organization"
+    },
+    "integrations": {
+      "@id": "schema:additionalProperty",
+      "@container": "@set"
+    }
+  }
+}

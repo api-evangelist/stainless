@@ -1,0 +1,59 @@
+{
+  "description": "Example Stainless SDK generation workflow using the GitHub Action integration",
+  "workflow": "openapi-spec-upload",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Upload OpenAPI Spec via GitHub Action",
+      "action": "stainless-api/upload-openapi-spec-action@v1",
+      "config": {
+        "stainless_api_key": "${{ secrets.STAINLESS_API_KEY }}",
+        "openapi_spec": "openapi.yml",
+        "project": "my-api",
+        "branch": "${{ github.ref_name }}"
+      }
+    },
+    {
+      "step": 2,
+      "name": "Stainless generates SDKs",
+      "outputs": [
+        {
+          "language": "TypeScript",
+          "package": "npm",
+          "repository": "github.com/my-org/my-api-node"
+        },
+        {
+          "language": "Python",
+          "package": "PyPI",
+          "repository": "github.com/my-org/my-api-python"
+        },
+        {
+          "language": "Go",
+          "package": "pkg.go.dev",
+          "repository": "github.com/my-org/my-api-go"
+        },
+        {
+          "language": "Java",
+          "package": "Maven Central",
+          "repository": "github.com/my-org/my-api-java"
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "name": "Developer installs and uses TypeScript SDK",
+      "install": "npm install my-api",
+      "usage": {
+        "language": "TypeScript",
+        "code": "import MyAPI from 'my-api';\nconst client = new MyAPI({ apiKey: process.env.MY_API_KEY });\nconst result = await client.resources.list({ page: 1, perPage: 20 });"
+      }
+    }
+  ],
+  "features_demonstrated": [
+    "Automatic retry with exponential backoff",
+    "Type-safe method calls",
+    "Automatic pagination",
+    "Environment variable authentication",
+    "Multi-language generation from single OpenAPI spec"
+  ]
+}

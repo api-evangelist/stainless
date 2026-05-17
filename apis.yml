@@ -37,13 +37,13 @@ common:
   - url: https://www.stainless.com/blog
     type: Blog
   - url: https://www.stainless.com/changelog
-    type: Change Log
+    type: ChangeLog
   - url: https://app.stainless.com/login
     type: Login
   - url: https://www.stainless.com/company
     type: About
   - url: https://github.com/stainless-api
-    type: GitHub Organization
+    type: GitHubOrganization
   - url: https://www.stainless.com/legal/terms-conditions
     type: TermsOfService
   - url: https://www.stainless.com/customers

@@ -28,6 +28,8 @@ segments:
   - SDKs
   - Developer Tooling
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/stainless-api
   - url: https://www.stainless.com/
     type: Portal
   - url: https://www.stainless.com/docs/

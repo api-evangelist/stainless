@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: Stainless Platform API
+  version: "0.1.0"
+  description: |
+    Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
+    servers, CLIs, and Terraform providers. The Stainless Platform API
+    (v0, base URL https://api.stainless.com) exposes endpoints for managing
+    organizations, projects, branches, builds, and the current user.
+    Endpoints derived from the public Stainless TypeScript SDK reference
+    (https://github.com/stainless-api/stainless-api-typescript).
+  contact:
+    name: Stainless
+    url: https://www.stainless.com
+servers:
+  - url: https://api.stainless.com
+    description: Stainless Platform API (v0)
+security:
+  - BearerAuth: []
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+      description: Stainless API key passed as a Bearer token.
+paths:
+  /v0/user:
+    get:
+      summary: Retrieve the current authenticated user
+      responses:
+        "200":
+          description: Current user
+  /v0/orgs:
+    get:
+      summary: List organizations
+      responses:
+        "200":
+          description: List of organizations
+  /v0/orgs/{org}:
+    parameters:
+      - in: path
+        name: org
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve an organization
+      responses:
+        "200":
+          description: Organization
+  /v0/projects:
+    get:
+      summary: List projects
+      parameters:
+        - in: query
+          name: cursor
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer }
+      responses:
+        "200":
+          description: Paginated list of projects
+    post:
+      summary: Create a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Project created
+  /v0/projects/{project}:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve a project
+      responses:
+        "200":
+          description: Project
+    patch:
+      summary: Update a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Updated project
+  /v0/projects/{project}/generate_commit_message:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+    post:
+      summary: Generate a commit message for a project
+      responses:
+        "200":
+          description: Generated commit message
+  /v0/projects/{project}/branches:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+    get:
+      summary: List branches in a project
+      responses:
+        "200":
+          description: List of branches
+    post:
+      summary: Create a branch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Branch created
+  /v0/projects/{project}/branches/{branch}:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+      - in: path
+        name: branch
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve a branch
+      responses:
+        "200":
+          description: Branch
+    delete:
+      summary: Delete a branch
+      responses:
+        "204":
+          description: Deleted
+  /v0/projects/{project}/branches/{branch}/rebase:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+      - in: path
+        name: branch
+        required: true
+        schema: { type: string }
+    put:
+      summary: Rebase a branch
+      responses:
+        "200":
+          description: Rebased branch
+  /v0/projects/{project}/branches/{branch}/reset:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+      - in: path
+        name: branch
+        required: true
+        schema: { type: string }
+    put:
+      summary: Reset a branch
+      responses:
+        "200":
+          description: Reset branch
+  /v0/projects/{project}/configs:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve project configs
+      responses:
+        "200":
+          description: Project config files
+  /v0/projects/{project}/configs/guess:
+    parameters:
+      - in: path
+        name: project
+        required: true
+        schema: { type: string }
+    post:
+      summary: Guess project configs from inputs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Guessed config
+  /v0/builds:
+    get:
+      summary: List builds
+      responses:
+        "200":
+          description: Paginated list of builds
+    post:
+      summary: Create a build
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "201":
+          description: Build created
+  /v0/builds/{buildId}:
+    parameters:
+      - in: path
+        name: buildId
+        required: true
+        schema: { type: string }
+    get:
+      summary: Retrieve a build
+      responses:
+        "200":
+          description: Build
+  /v0/builds/compare:
+    post:
+      summary: Compare two builds
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object }
+      responses:
+        "200":
+          description: Comparison result
+  /v0/builds/{buildId}/diagnostics:
+    parameters:
+      - in: path
+        name: buildId
+        required: true
+        schema: { type: string }
+    get:
+      summary: List diagnostics for a build
+      responses:
+        "200":
+          description: Diagnostics page
+  /v0/build_target_outputs:
+    get:
+      summary: Retrieve build target outputs
+      parameters:
+        - in: query
+          name: build_id
+          schema: { type: string }
+        - in: query
+          name: target
+          schema: { type: string }
+      responses:
+        "200":
+          description: Target outputs

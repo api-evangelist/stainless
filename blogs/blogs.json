@@ -2,14 +2,10 @@
   "repo": "stainless",
   "feeds": [
     {
-      "source": "https://www.stainless.com/blog/rss.xml",
-      "error": "HTTPError"
-    },
-    {
       "source": "https://www.stainless.com/blog",
       "error": "HTTPError"
     }
   ],
   "post_count": 32,
-  "fetched": "2026-06-01T23:35:02Z"
+  "fetched": "2026-06-14T20:42:17Z"
 }

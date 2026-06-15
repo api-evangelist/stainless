@@ -1,0 +1,424 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stainless Platform API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Retrieve the current authenticated user",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/user"
+      },
+      "docs": "Retrieve the current authenticated user"
+    },
+    {
+      "info": {
+        "name": "List organizations",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/orgs"
+      },
+      "docs": "List organizations"
+    },
+    {
+      "info": {
+        "name": "Retrieve an organization",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/orgs/:org",
+        "params": [
+          {
+            "name": "org",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve an organization"
+    },
+    {
+      "info": {
+        "name": "List projects",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/projects",
+        "params": [
+          {
+            "name": "cursor",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List projects"
+    },
+    {
+      "info": {
+        "name": "Create a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/projects",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a project"
+    },
+    {
+      "info": {
+        "name": "Retrieve a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/projects/:project",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a project"
+    },
+    {
+      "info": {
+        "name": "Update a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "PATCH",
+        "url": "https://api.stainless.com/v0/projects/:project",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Update a project"
+    },
+    {
+      "info": {
+        "name": "Generate a commit message for a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/projects/:project/generate_commit_message",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Generate a commit message for a project"
+    },
+    {
+      "info": {
+        "name": "List branches in a project",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/projects/:project/branches",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List branches in a project"
+    },
+    {
+      "info": {
+        "name": "Create a branch",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/projects/:project/branches",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a branch"
+    },
+    {
+      "info": {
+        "name": "Retrieve a branch",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/projects/:project/branches/:branch",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "branch",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a branch"
+    },
+    {
+      "info": {
+        "name": "Delete a branch",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.stainless.com/v0/projects/:project/branches/:branch",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "branch",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a branch"
+    },
+    {
+      "info": {
+        "name": "Rebase a branch",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.stainless.com/v0/projects/:project/branches/:branch/rebase",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "branch",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Rebase a branch"
+    },
+    {
+      "info": {
+        "name": "Reset a branch",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.stainless.com/v0/projects/:project/branches/:branch/reset",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "branch",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Reset a branch"
+    },
+    {
+      "info": {
+        "name": "Retrieve project configs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/projects/:project/configs",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve project configs"
+    },
+    {
+      "info": {
+        "name": "Guess project configs from inputs",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/projects/:project/configs/guess",
+        "params": [
+          {
+            "name": "project",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Guess project configs from inputs"
+    },
+    {
+      "info": {
+        "name": "List builds",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/builds"
+      },
+      "docs": "List builds"
+    },
+    {
+      "info": {
+        "name": "Create a build",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/builds",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create a build"
+    },
+    {
+      "info": {
+        "name": "Retrieve a build",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/builds/:buildId",
+        "params": [
+          {
+            "name": "buildId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a build"
+    },
+    {
+      "info": {
+        "name": "Compare two builds",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.stainless.com/v0/builds/compare",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Compare two builds"
+    },
+    {
+      "info": {
+        "name": "List diagnostics for a build",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/builds/:buildId/diagnostics",
+        "params": [
+          {
+            "name": "buildId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "List diagnostics for a build"
+    },
+    {
+      "info": {
+        "name": "Retrieve build target outputs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.stainless.com/v0/build_target_outputs",
+        "params": [
+          {
+            "name": "build_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "target",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Retrieve build target outputs"
+    }
+  ],
+  "bundled": true
+}

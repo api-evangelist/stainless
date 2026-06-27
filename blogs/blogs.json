@@ -3,9 +3,12 @@
   "feeds": [
     {
       "source": "https://www.stainless.com/blog",
-      "error": "HTTPError"
+      "feed_url": "",
+      "saved": 0,
+      "method": "agent-scrape"
     }
   ],
+  "fetched": "2026-06-27T13:12:37Z",
   "post_count": 32,
-  "fetched": "2026-06-14T20:42:17Z"
+  "agent_pulled": "2026-06-27"
 }

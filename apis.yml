@@ -28,6 +28,12 @@ segments:
   - SDKs
   - Developer Tooling
 common:
+  - type: VulnerabilityDisclosure
+    url: security/stainless-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/stainless-domain-security.yml
+  - type: Authentication
+    url: authentication/stainless-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/stainless-api
   - url: https://www.stainless.com/

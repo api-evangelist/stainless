@@ -28,6 +28,8 @@ segments:
   - SDKs
   - Developer Tooling
 common:
+  - type: AgenticAccess
+    url: agentic-access/stainless-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/stainless-vulnerability-disclosure.yml
   - type: DomainSecurity

@@ -1,0 +1,231 @@
+openapi: 3.1.0
+info:
+  title: Stainless Platform Build Target Outputs Projects API
+  version: 0.1.0
+  description: 'Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
+
+    servers, CLIs, and Terraform providers. The Stainless Platform API
+
+    (v0, base URL https://api.stainless.com) exposes endpoints for managing
+
+    organizations, projects, branches, builds, and the current user.
+
+    Endpoints derived from the public Stainless TypeScript SDK reference
+
+    (https://github.com/stainless-api/stainless-api-typescript).
+
+    '
+  contact:
+    name: Stainless
+    url: https://www.stainless.com
+servers:
+- url: https://api.stainless.com
+  description: Stainless Platform API (v0)
+security:
+- BearerAuth: []
+tags:
+- name: Projects
+paths:
+  /v0/projects:
+    get:
+      summary: List projects
+      parameters:
+      - in: query
+        name: cursor
+        schema:
+          type: string
+      - in: query
+        name: limit
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Paginated list of projects
+      tags:
+      - Projects
+    post:
+      summary: Create a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Project created
+      tags:
+      - Projects
+  /v0/projects/{project}:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve a project
+      responses:
+        '200':
+          description: Project
+      tags:
+      - Projects
+    patch:
+      summary: Update a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated project
+      tags:
+      - Projects
+  /v0/projects/{project}/generate_commit_message:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Generate a commit message for a project
+      responses:
+        '200':
+          description: Generated commit message
+      tags:
+      - Projects
+  /v0/projects/{project}/branches:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List branches in a project
+      responses:
+        '200':
+          description: List of branches
+      tags:
+      - Projects
+    post:
+      summary: Create a branch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Branch created
+      tags:
+      - Projects
+  /v0/projects/{project}/branches/{branch}:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: branch
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve a branch
+      responses:
+        '200':
+          description: Branch
+      tags:
+      - Projects
+    delete:
+      summary: Delete a branch
+      responses:
+        '204':
+          description: Deleted
+      tags:
+      - Projects
+  /v0/projects/{project}/branches/{branch}/rebase:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: branch
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Rebase a branch
+      responses:
+        '200':
+          description: Rebased branch
+      tags:
+      - Projects
+  /v0/projects/{project}/branches/{branch}/reset:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: branch
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Reset a branch
+      responses:
+        '200':
+          description: Reset branch
+      tags:
+      - Projects
+  /v0/projects/{project}/configs:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve project configs
+      responses:
+        '200':
+          description: Project config files
+      tags:
+      - Projects
+  /v0/projects/{project}/configs/guess:
+    parameters:
+    - in: path
+      name: project
+      required: true
+      schema:
+        type: string
+    post:
+      summary: Guess project configs from inputs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Guessed config
+      tags:
+      - Projects
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+      description: Stainless API key passed as a Bearer token.

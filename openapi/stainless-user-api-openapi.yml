@@ -1,0 +1,43 @@
+openapi: 3.1.0
+info:
+  title: Stainless Platform Build Target Outputs User API
+  version: 0.1.0
+  description: 'Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
+
+    servers, CLIs, and Terraform providers. The Stainless Platform API
+
+    (v0, base URL https://api.stainless.com) exposes endpoints for managing
+
+    organizations, projects, branches, builds, and the current user.
+
+    Endpoints derived from the public Stainless TypeScript SDK reference
+
+    (https://github.com/stainless-api/stainless-api-typescript).
+
+    '
+  contact:
+    name: Stainless
+    url: https://www.stainless.com
+servers:
+- url: https://api.stainless.com
+  description: Stainless Platform API (v0)
+security:
+- BearerAuth: []
+tags:
+- name: User
+paths:
+  /v0/user:
+    get:
+      summary: Retrieve the current authenticated user
+      responses:
+        '200':
+          description: Current user
+      tags:
+      - User
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+      description: Stainless API key passed as a Bearer token.

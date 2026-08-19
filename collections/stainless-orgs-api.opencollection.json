@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stainless Platform Build Target Outputs Orgs API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orgs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/orgs"
+          },
+          "docs": "List organizations"
+        },
+        {
+          "info": {
+            "name": "Retrieve an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/orgs/:org",
+            "params": [
+              {
+                "name": "org",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve an organization"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

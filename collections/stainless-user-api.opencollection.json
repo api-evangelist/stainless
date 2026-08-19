@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stainless Platform Build Target Outputs User API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the current authenticated user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/user"
+          },
+          "docs": "Retrieve the current authenticated user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

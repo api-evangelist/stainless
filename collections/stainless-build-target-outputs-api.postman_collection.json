@@ -1,0 +1,128 @@
+{
+  "item": [
+    {
+      "id": "400aa40d-287f-4f28-a292-e3426e2a64dd",
+      "name": "Build Target Outputs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "38ef5d24-8cdd-4c17-98da-12d270b1be02",
+          "name": "Retrieve build target outputs",
+          "request": {
+            "name": "Retrieve build target outputs",
+            "description": {},
+            "url": {
+              "path": [
+                "v0",
+                "build_target_outputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "build_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "target",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d865d2cc-ba1a-4e0d-a929-85f4d253a240",
+              "name": "Target outputs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "build_target_outputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "build_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "target",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stainless.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d3c3dde2-1858-4c5d-8aed-7675638ca2d7",
+    "name": "Stainless Platform Build Target Outputs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP\nservers, CLIs, and Terraform providers. The Stainless Platform API\n(v0, base URL https://api.stainless.com) exposes endpoints for managing\norganizations, projects, branches, builds, and the current user.\nEndpoints derived from the public Stainless TypeScript SDK reference\n(https://github.com/stainless-api/stainless-api-typescript).\n\n\nContact Support:\n Name: Stainless",
+      "type": "text/plain"
+    }
+  }
+}

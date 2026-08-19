@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Stainless Platform Build Target Outputs Builds API",
+    "version": "0.1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List builds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/builds"
+          },
+          "docs": "List builds"
+        },
+        {
+          "info": {
+            "name": "Create a build",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stainless.com/v0/builds",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a build"
+        },
+        {
+          "info": {
+            "name": "Retrieve a build",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/builds/:buildId",
+            "params": [
+              {
+                "name": "buildId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a build"
+        },
+        {
+          "info": {
+            "name": "Compare two builds",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.stainless.com/v0/builds/compare",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Compare two builds"
+        },
+        {
+          "info": {
+            "name": "List diagnostics for a build",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.stainless.com/v0/builds/:buildId/diagnostics",
+            "params": [
+              {
+                "name": "buildId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List diagnostics for a build"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

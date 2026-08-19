@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "10c5bbca-2e12-4eca-b8b9-14bd308a0afd",
+      "name": "Orgs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eddc296c-29da-4487-9fe8-85c9f5e8c3d7",
+          "name": "List organizations",
+          "request": {
+            "name": "List organizations",
+            "description": {},
+            "url": {
+              "path": [
+                "v0",
+                "orgs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e139cc0-a934-4392-b69e-fd3ddb3b95bf",
+              "name": "List of organizations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "orgs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85831dc5-19a0-4bd5-b926-7700639c87f3",
+          "name": "Retrieve an organization",
+          "request": {
+            "name": "Retrieve an organization",
+            "description": {},
+            "url": {
+              "path": [
+                "v0",
+                "orgs",
+                ":org"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "org",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2c5ff81-90af-4400-92b9-a0af16e3e70a",
+              "name": "Organization",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "orgs",
+                    ":org"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "org",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.stainless.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c2fc7640-429d-46e2-a986-968511e5220c",
+    "name": "Stainless Platform Build Target Outputs Orgs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP\nservers, CLIs, and Terraform providers. The Stainless Platform API\n(v0, base URL https://api.stainless.com) exposes endpoints for managing\norganizations, projects, branches, builds, and the current user.\nEndpoints derived from the public Stainless TypeScript SDK reference\n(https://github.com/stainless-api/stainless-api-typescript).\n\n\nContact Support:\n Name: Stainless",
+      "type": "text/plain"
+    }
+  }
+}

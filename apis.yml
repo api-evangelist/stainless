@@ -16,6 +16,14 @@ tags:
   - Developer Experience
   - MCP
   - Platform
+  - SDK
+  - Terraform
+tags_raw:
+  - Code Generation
+  - Documentation
+  - Developer Experience
+  - MCP
+  - Platform
   - SDKs
   - Terraform
 type: Index
@@ -75,6 +83,10 @@ apis:
 - aid: stainless:stainless
   name: Stainless SDK Generator
   tags:
+  - Code Generation
+  - Developer Experience
+  - SDK
+  tags_raw:
   - Code Generation
   - Developer Experience
   - SDKs
@@ -182,6 +194,8 @@ apis:
   description: The Orgs API from Stainless — 2 operation(s) for orgs.
   humanURL: https://www.stainless.com/
   tags:
+  - Organization
+  tags_raw:
   - Orgs
   properties:
   - type: OpenAPI
@@ -191,6 +205,8 @@ apis:
   description: The Projects API from Stainless — 9 operation(s) for projects.
   humanURL: https://www.stainless.com/
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI

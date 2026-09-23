@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stainless Platform Build Target Outputs Projects API
+  title: Stainless Platform Projects API
   version: 0.1.0
   description: 'Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
 
@@ -12,9 +12,7 @@ info:
 
     Endpoints derived from the public Stainless TypeScript SDK reference
 
-    (https://github.com/stainless-api/stainless-api-typescript).
-
-    '
+    (https://github.com/stainless-api/stainless-api-typescript).'
   contact:
     name: Stainless
     url: https://www.stainless.com
@@ -43,6 +41,8 @@ paths:
           description: Paginated list of projects
       tags:
       - Projects
+      operationId: getV0Projects
+      x-operation-id-source: derived
     post:
       summary: Create a project
       requestBody:
@@ -56,6 +56,8 @@ paths:
           description: Project created
       tags:
       - Projects
+      operationId: postV0Projects
+      x-operation-id-source: derived
   /v0/projects/{project}:
     parameters:
     - in: path
@@ -70,6 +72,8 @@ paths:
           description: Project
       tags:
       - Projects
+      operationId: getV0ProjectsByProject
+      x-operation-id-source: derived
     patch:
       summary: Update a project
       requestBody:
@@ -83,6 +87,8 @@ paths:
           description: Updated project
       tags:
       - Projects
+      operationId: patchV0ProjectsByProject
+      x-operation-id-source: derived
   /v0/projects/{project}/generate_commit_message:
     parameters:
     - in: path
@@ -97,6 +103,8 @@ paths:
           description: Generated commit message
       tags:
       - Projects
+      operationId: postV0ProjectsByProjectGenerateCommitMessage
+      x-operation-id-source: derived
   /v0/projects/{project}/branches:
     parameters:
     - in: path
@@ -111,6 +119,8 @@ paths:
           description: List of branches
       tags:
       - Projects
+      operationId: getV0ProjectsByProjectBranches
+      x-operation-id-source: derived
     post:
       summary: Create a branch
       requestBody:
@@ -124,6 +134,8 @@ paths:
           description: Branch created
       tags:
       - Projects
+      operationId: postV0ProjectsByProjectBranches
+      x-operation-id-source: derived
   /v0/projects/{project}/branches/{branch}:
     parameters:
     - in: path
@@ -143,6 +155,8 @@ paths:
           description: Branch
       tags:
       - Projects
+      operationId: getV0ProjectsByProjectBranchesByBranch
+      x-operation-id-source: derived
     delete:
       summary: Delete a branch
       responses:
@@ -150,6 +164,8 @@ paths:
           description: Deleted
       tags:
       - Projects
+      operationId: deleteV0ProjectsByProjectBranchesByBranch
+      x-operation-id-source: derived
   /v0/projects/{project}/branches/{branch}/rebase:
     parameters:
     - in: path
@@ -169,6 +185,8 @@ paths:
           description: Rebased branch
       tags:
       - Projects
+      operationId: putV0ProjectsByProjectBranchesByBranchRebase
+      x-operation-id-source: derived
   /v0/projects/{project}/branches/{branch}/reset:
     parameters:
     - in: path
@@ -188,6 +206,8 @@ paths:
           description: Reset branch
       tags:
       - Projects
+      operationId: putV0ProjectsByProjectBranchesByBranchReset
+      x-operation-id-source: derived
   /v0/projects/{project}/configs:
     parameters:
     - in: path
@@ -202,6 +222,8 @@ paths:
           description: Project config files
       tags:
       - Projects
+      operationId: getV0ProjectsByProjectConfigs
+      x-operation-id-source: derived
   /v0/projects/{project}/configs/guess:
     parameters:
     - in: path
@@ -222,6 +244,8 @@ paths:
           description: Guessed config
       tags:
       - Projects
+      operationId: postV0ProjectsByProjectConfigsGuess
+      x-operation-id-source: derived
 components:
   securitySchemes:
     BearerAuth:

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Stainless Platform Build Target Outputs User API
+  title: Stainless Platform User API
   version: 0.1.0
   description: 'Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
 
@@ -12,9 +12,7 @@ info:
 
     Endpoints derived from the public Stainless TypeScript SDK reference
 
-    (https://github.com/stainless-api/stainless-api-typescript).
-
-    '
+    (https://github.com/stainless-api/stainless-api-typescript).'
   contact:
     name: Stainless
     url: https://www.stainless.com
@@ -34,6 +32,8 @@ paths:
           description: Current user
       tags:
       - User
+      operationId: getV0User
+      x-operation-id-source: derived
 components:
   securitySchemes:
     BearerAuth:

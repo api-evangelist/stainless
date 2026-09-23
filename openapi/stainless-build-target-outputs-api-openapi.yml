@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Stainless Platform Build Target Outputs API
   version: 0.1.0
@@ -12,9 +12,7 @@ info:
 
     Endpoints derived from the public Stainless TypeScript SDK reference
 
-    (https://github.com/stainless-api/stainless-api-typescript).
-
-    '
+    (https://github.com/stainless-api/stainless-api-typescript).'
   contact:
     name: Stainless
     url: https://www.stainless.com
@@ -43,6 +41,8 @@ paths:
           description: Target outputs
       tags:
       - Build Target Outputs
+      operationId: getV0BuildTargetOutputs
+      x-operation-id-source: derived
 components:
   securitySchemes:
     BearerAuth:

@@ -62,6 +62,8 @@ segments:
   - SDKs
   - Developer Tooling
 common:
+  - type: VendorFacets
+    url: vendor-facets/stainless-vendor-facets.yml
   - type: Website
     url: https://www.stainless.com/
   - type: AgenticAccess

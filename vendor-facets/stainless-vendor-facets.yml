@@ -1,0 +1,300 @@
+# Vendor facets — Stainless. SDK, CLI, Terraform and MCP generation plus a static docs platform,
+# all from one OpenAPI. The headline: the SDK, CLI and docs pointers score in full once declared.
+# The MCP server is Code Mode only, the same two tools (docs search, execute code) for every
+# customer, so 0.22.0 grades it `platform`. Generated SKILL.md files count at the derived rate.
+vendor: stainless
+name: Stainless
+website: https://www.stainless.com
+areas:
+- sdk-generation
+registry_keys: []
+rubric_schema_version: 0.22.0
+generated: '2026-09-25'
+features_refreshed: '2026-09-25'
+basis: capability
+summary: >-
+  Stainless reaches the most Developer Ergonomics surface of the SDK generators: SDKs in eight or more
+  languages, a generated CLI, and a static, server-light docs platform with an API reference, per-page
+  Markdown and an llms.txt. Each counts once the provider declares it. Its MCP servers expose the same
+  two Code Mode tools for every customer, so they score as `platform` (0.25 of 12). Its generated SKILL.md
+  files are the derived class (0.25). The decorated OpenAPI adds SDK snippets, not request/response examples,
+  and is not an Overlay document, so neither examples_present nor overlay_published moves. Unless the
+  provider uses the docs platform or a default-hosted MCP server, Stainless output looks like the provider's
+  own work.
+features:
+- id: sdk-generation
+  name: SDK generation
+  description: >-
+    SDKs for TypeScript, Python, Go, Java, Kotlin, Ruby, C# and PHP generated from an OpenAPI, with testing
+    and publishing.
+  source: https://www.stainless.com/
+  tier: paid
+- id: cli-generation
+  name: CLI generation
+  description: >-
+    A generated command-line tool for the API, generally available since January 2026, with streaming,
+    pagination and shell completion.
+  source: https://www.stainless.com/changelog/
+  tier: paid
+- id: terraform-generation
+  name: Terraform provider generation
+  description: Production-ready Terraform providers generated from the OpenAPI.
+  source: https://www.stainless.com/docs
+  tier: paid
+- id: mcp-code-mode
+  name: MCP server generation (Code Mode)
+  description: >-
+    An MCP server exposing two tools, a docs search and a code executor that runs TypeScript against the
+    SDK, published to npm, Docker or MCPB, or hosted by Stainless, self-hosted or on Cloudflare Workers.
+  source: https://www.stainless.com/docs/mcp/
+  tier: all
+- id: docs-platform
+  name: Stainless Docs Platform
+  description: >-
+    An Astro static site with a generated language-specific API reference, MDX/Markdoc guides, faceted
+    and AI search, hosted on Cloudflare with free custom domains or self-hosted. Public beta since March
+    2026.
+  source: https://www.stainless.com/docs/docs-platform/
+  tier: paid
+- id: docs-markdown-llms
+  name: Per-page Markdown and llms.txt
+  description: >-
+    Every docs page has an LLM-friendly Markdown twin (.md suffix or Accept header), and an llms.txt can
+    be added.
+  source: https://www.stainless.com/docs/docs-platform/
+  tier: paid
+- id: decorated-spec
+  name: Decorated OpenAPI with SDK code samples
+  description: >-
+    A copy of the OpenAPI with x-codeSamples, x-readme samples or x-stainless-snippets added per operation,
+    delivered by GitHub Action or a hosted URL, for Mintlify, ReadMe, GitBook, Redocly or bump.sh.
+  source: https://www.stainless.com/docs/docs-integrations/
+  tier: all
+- id: generated-skills
+  name: Generated SKILL.md for the customer's API
+  description: Stainless states it auto-generates SKILL.md files for the customer's API.
+  source: https://www.stainless.com/blog/steps-toward-great-agent-experience-every-api-provider-can-take-today
+  tier: unknown
+- id: stl-skills
+  name: Stainless CLI skill (stl skills)
+  description: Installs a skill that teaches coding agents to use the Stainless CLI.
+  source: https://www.stainless.com/changelog/
+  tier: all
+maps:
+- feature: sdk-generation
+  check: sdk_count_1
+  layer: composite
+  provider_must: Publish a generated SDK and declare it as an SDK entry in apis.yml.
+  catalog_pass_rate: 0.148
+  facet: developer_ergonomics
+  points: 3
+  baseline_pass_rate: 0.413
+- feature: sdk-generation
+  check: sdk_count_3
+  layer: composite
+  provider_must: Publish three or more language SDKs and declare each as its own SDK entry.
+  catalog_pass_rate: 0.018
+  facet: developer_ergonomics
+  points: 4
+  baseline_pass_rate: 0.043
+- feature: cli-generation
+  check: cli_present
+  layer: composite
+  provider_must: Release the generated CLI and declare it as a CLI entry.
+  catalog_pass_rate: 0.063
+  facet: developer_ergonomics
+  points: 3
+  baseline_pass_rate: 0.19
+- feature: docs-platform
+  check: documentation_present
+  layer: composite
+  provider_must: Declare the docs site as a Documentation entry.
+  catalog_pass_rate: 0.453
+  facet: developer_ergonomics
+  points: 4
+  baseline_pass_rate: 0.95
+  saturated: true
+  saturated_note: >-
+    95% of providers with a contract, docs and a reference already earn this; the vendor cannot move it
+    for most of its buyers.
+- feature: docs-platform
+  check: api_reference_present
+  layer: composite
+  provider_must: Declare the generated reference as an APIReference entry.
+  catalog_pass_rate: 0.222
+  facet: developer_ergonomics
+  points: 3
+  baseline_pass_rate: 0.942
+  saturated: true
+  saturated_note: >-
+    94% of providers with a contract, docs and a reference already earn this; the vendor cannot move it
+    for most of its buyers.
+- feature: docs-markdown-llms
+  check: llms_txt_published
+  layer: composite
+  credit: 1.0
+  provider_must: Add the llms.txt and serve the docs on the provider's own custom domain.
+  note: >-
+    The file is added by the provider from its own docs content on its own domain, which format rule 2
+    credits in full.
+  catalog_pass_rate: 0.351
+  facet: discoverability
+  points: 4
+  baseline_pass_rate: 0.65
+- feature: decorated-spec
+  check: examples_published
+  layer: composite
+  provider_must: Declare the page or repository carrying the generated snippets as a CodeSamples entry.
+  catalog_pass_rate: 0.052
+  facet: contract_quality
+  points: 4
+  baseline_pass_rate: 0.127
+- feature: decorated-spec
+  check: openapi_examples
+  layer: agent_readiness
+  grade: documented
+  partial: true
+  partial_note: >-
+    The added snippets are SDK calls, not request/response examples. The dimension reads examples first,
+    so Stainless reaches only the Code Samples link fallback (0.25).
+  points: 7
+  baseline_pass_rate: 0.36
+- feature: mcp-code-mode
+  check: mcp_server
+  layer: agent_readiness
+  grade: platform
+  provider_must: Deploy the server remotely and declare it.
+  note: >-
+    Code Mode exposes the same two tools (docs search, execute code) for every Stainless customer. That
+    shared tool shape is what 0.22.0 grades `platform` (0.25). There is a fair argument that the SDK behind
+    the executor is the provider's own. It belongs in the rubric, not in this row.
+  points: 12
+  baseline_pass_rate: 0.22
+- feature: generated-skills
+  check: agent_skills
+  layer: agent_readiness
+  credit: 0.25
+  provider_must: Publish the generated SKILL.md where the catalog's skills harvest finds it.
+  note: Generated from the spec rather than written by the provider, so the derived class.
+  points: 5
+  baseline_pass_rate: 0.236
+- feature: generated-skills
+  check: agent_skill_present
+  layer: composite
+  credit: 0.25
+  provider_must: Declare the published skill as an AgentSkill entry.
+  catalog_pass_rate: 0.033
+  facet: developer_ergonomics
+  points: 3
+  baseline_pass_rate: 0.236
+earns_nothing:
+- feature: decorated-spec
+  check: examples_present
+  why: >-
+    x-codeSamples and x-stainless-snippets are SDK snippets. The check counts request or response examples.
+- feature: decorated-spec
+  check: overlay_published
+  why: >-
+    The decorated spec is a full copy of the OpenAPI with snippets added, not an OpenAPI Overlay document.
+- feature: stl-skills
+  check: agent_skill_present
+  why: The stl skill teaches an agent to drive Stainless and says nothing about the customer's API.
+- feature: sdk-generation
+  check: idempotency
+  layer: agent_readiness
+  why: SDK retries do not add an idempotency key to the contract, and the dimension reads the contract.
+out_of_reach:
+  checks:
+  - contract_present
+  - examples_present
+  - change_log_present
+  - status_page_present
+  - rate_limits_documented
+  - well_known_published
+  - postman_present
+  - auth_clarity
+  - error_semantics
+  note: >-
+    Stainless consumes the provider's OpenAPI; it does not author or repair it. Contract Quality and the
+    contract-read agent-readiness dimensions stay where the provider left them.
+unscored_practice:
+- feature: terraform-generation
+  why: A generated Terraform provider is a real integration surface that no check reads.
+- feature: docs-markdown-llms
+  why: Markdown served on Accept-header negotiation is agent-facing practice with no check.
+surface:
+  discoverability:
+    reachable: 4.0
+    total: 54
+  contract_quality:
+    reachable: 4.0
+    total: 211
+  developer_ergonomics:
+    reachable: 17.8
+    total: 42
+  agent_readiness:
+    reachable: 6.0
+    total: 139
+hard_rule: >-
+  A model, not a score. Adopting this vendor changes a provider's Kin Score only when the provider publishes
+  the resulting artifacts on its own surface; nothing here writes a score, and no sponsorship or partnership
+  can.
+method: searched
+source:
+- https://www.stainless.com/
+- https://www.stainless.com/blog/steps-toward-great-agent-experience-every-api-provider-can-take-today
+- https://www.stainless.com/changelog/
+- https://www.stainless.com/docs
+- https://www.stainless.com/docs/docs-integrations/
+- https://www.stainless.com/docs/docs-platform/
+- https://www.stainless.com/docs/mcp/
+measured:
+  cohort:
+    method: vendors-catalog.json detections (CNAME / header / URL shape / markup), never a name match
+    detected: 0
+    in_baseline: 0
+  control:
+    basis: providers earning contract_present + documentation_present + api_reference_present, minus the
+      cohort
+    n: 5216
+  metric: >-
+    cohort_pct / control_pct = mean share of the check's points earned (derived and platform credit weighted),
+    x100
+  measured_on: '2026-09-25'
+  status: 'not measurable: 0 detected customers clear the baseline (need 20)'
+simulation:
+  simulated_on: '2026-09-25'
+  rubric: 0.23.0
+  population: providers publishing a contract (contract_present earned), replayable exactly
+  providers: 8977
+  providers_unreplayable: 987
+  providers_moved: 8961
+  conditional_rows: excluded (they depend on what the API already does)
+  composite_lift:
+    median: 6.4
+    p75: 7.8
+    p90: 8.1
+    max: 10.6
+    mean_among_movers: 6.1
+  agent_readiness_lift:
+    median: 3.1
+    p75: 4.3
+    p90: 4.3
+    max: 5.1
+    mean_among_movers: 3.2
+  facet_lift_median_among_movers:
+    discoverability: 7.4
+    contract_quality: 2.7
+    developer_ergonomics: 25.6
+  composite_band_moves:
+    thin -> developing: 2133
+    developing -> strong: 1169
+    emerging -> thin: 391
+    strong -> exemplar: 319
+    minimal -> emerging: 3
+  agent_readiness_band_moves:
+    agent-aware -> agent-ready: 1292
+    agent-ready -> agent-native: 96
+  method: >-
+    each provider's own kin/checks file, the vendor's maps at their stated credit, the scorer's composite
+    formula; from -> to, nothing written

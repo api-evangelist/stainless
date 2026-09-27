@@ -18,6 +18,8 @@ tags:
   - Platform
   - SDK
   - Terraform
+  - SDK Generation
+  - OpenAPI
 tags_raw:
   - Code Generation
   - Documentation
@@ -26,6 +28,8 @@ tags_raw:
   - Platform
   - SDKs
   - Terraform
+  - SDK Generation
+  - OpenAPI
 type: Index
 deliveryModel:
   model: saas

@@ -245,3 +245,10 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 specificationVersion: '0.23'
+x-correction-request:
+  requested: '2026-10-03'
+  source:
+  - apis.io Influence-tier request queue (kinlane-test-influence)
+  request: 'Influence-tier artifact submission ebe1e0d5 (2026-09-23): OpenAPI at https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless/stainless-v0-4ec3b12ce6b2e1e2eb800fab7dea5fc272c8c7aaf364a5305af5f4eda95e07b3.yml.
+    Verify it is live and real (MCP: initialize/tools/list or server card; OpenAPI: paths), then record it as a
+    pointer and harvest it.'

@@ -244,6 +244,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-user-api-openapi.yml
+- aid: stainless:stainless-spec-api
+  name: Stainless Spec API
+  description: The Spec API from Stainless — 1 operation(s) for spec.
+  humanURL: https://www.stainless.com/
+  tags:
+  - Spec
+  properties:
+  - type: OpenAPI
+    url: openapi/stainless-spec-api-openapi.yml
+- aid: stainless:stainless-open-api-api
+  name: Stainless Open API
+  description: The Open API API from Stainless — 1 operation(s) for open api.
+  humanURL: https://www.stainless.com/
+  tags:
+  - Open API
+  properties:
+  - type: OpenAPI
+    url: openapi/stainless-open-api-api-openapi.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

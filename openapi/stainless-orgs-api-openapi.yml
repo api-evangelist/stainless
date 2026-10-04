@@ -1,59 +1,93 @@
 openapi: 3.2.0
 info:
-  title: Stainless Platform Orgs API
-  version: 0.1.0
-  description: 'Stainless turns an OpenAPI specification into idiomatic SDKs, docs, MCP
-
-    servers, CLIs, and Terraform providers. The Stainless Platform API
-
-    (v0, base URL https://api.stainless.com) exposes endpoints for managing
-
-    organizations, projects, branches, builds, and the current user.
-
-    Endpoints derived from the public Stainless TypeScript SDK reference
-
-    (https://github.com/stainless-api/stainless-api-typescript).'
-  contact:
-    name: Stainless
-    url: https://www.stainless.com
+  title: Stainless Orgs API
+  version: 1.0.0
+  description: 'Operations tagged Orgs across 2 of this provider''s published API definitions: stainless.yml, stainless-sdk-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
-- url: https://api.stainless.com
-  description: Stainless Platform API (v0)
-security:
-- BearerAuth: []
+- url: v1
 tags:
 - name: Orgs
 paths:
   /v0/orgs:
     get:
       summary: List organizations
+      description: List organizations accessible to the current authentication method.
+      requestBody:
+        content:
+          application/json: {}
       responses:
         '200':
-          description: List of organizations
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Org'
+                  has_more:
+                    type: boolean
+                  next_cursor:
+                    type: string
+                required:
+                - data
+                - has_more
       tags:
       - Orgs
       operationId: getV0Orgs
       x-operation-id-source: derived
+    servers:
+    - url: v1
   /v0/orgs/{org}:
-    parameters:
-    - in: path
-      name: org
-      required: true
-      schema:
-        type: string
     get:
       summary: Retrieve an organization
+      description: Retrieve an organization by name.
+      parameters:
+      - in: path
+        name: org
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json: {}
       responses:
         '200':
-          description: Organization
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Org'
       tags:
       - Orgs
       operationId: getV0OrgsByOrg
       x-operation-id-source: derived
+    servers:
+    - url: v1
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: API Key
-      description: Stainless API key passed as a Bearer token.
+  schemas:
+    Org:
+      type: object
+      properties:
+        object:
+          type: string
+          enum:
+          - org
+        slug:
+          type: string
+        display_name:
+          type:
+          - string
+          - 'null'
+        enable_ai_commit_messages:
+          type: boolean
+      required:
+      - object
+      - slug
+      - display_name
+      - enable_ai_commit_messages
+x-refined-from:
+- stainless.yml
+- stainless-sdk-openapi.yml

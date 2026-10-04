@@ -1,0 +1,43 @@
+openapi: 3.2.0
+info:
+  title: Stainless Spec API
+  version: 1.0.0
+  description: 'Operations tagged Spec across 2 of this provider''s published API definitions: stainless.yml, stainless-sdk-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: v1
+tags:
+- name: Spec
+paths:
+  /v0/spec/application/{clientId}/{projectName}:
+    get:
+      summary: Retrieve decorated spec
+      description: Retrieve the decorated spec for a given application and project.
+      parameters:
+      - in: path
+        name: projectName
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: clientId
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Spec
+      operationId: getV0SpecApplicationByClientIdByProjectName
+      x-operation-id-source: derived
+    servers:
+    - url: v1
+x-refined-from:
+- stainless.yml
+- stainless-sdk-openapi.yml

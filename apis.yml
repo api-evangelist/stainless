@@ -66,6 +66,9 @@ segments:
   - SDKs
   - Developer Tooling
 common:
+  - type: CapabilityMap
+    url: capabilities/stainless-capability-edges.yml
+    name: Stainless Business Capability Map
   - type: VendorFacets
     url: vendor-facets/stainless-vendor-facets.yml
   - type: Website

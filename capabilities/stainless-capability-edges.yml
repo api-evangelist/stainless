@@ -1,0 +1,37 @@
+slug: stainless
+provider: Stainless
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Build Target Outputs
+  spec_file: stainless-build-target-outputs-api-openapi.yml
+  capability_id: BC-4270.20
+  capability_id_l1: BC-4270
+  capability_name: SDK & Client Library Management
+  confidence: 0.7
+  evidence: '''Retrieve build target outputs'' on a platform that ''turns an OpenAPI specification into
+    idiomatic SDKs, docs, MCP servers, CLIs, and Terraform providers'''
+  reason: Build targets are the per-language generated client libraries; retrieving their outputs serves
+    SDK and client-library generation/stewardship. Some ambiguity with CI build pipelines keeps confidence
+    moderate.
+- tag: Builds
+  spec_file: stainless-builds-api-openapi.yml
+  capability_id: BC-4270.20
+  capability_id_l1: BC-4270
+  capability_name: SDK & Client Library Management
+  confidence: 0.7
+  evidence: '''Create a build'', ''Compare two builds'', ''List diagnostics for a build'' for a platform
+    that generates ''idiomatic SDKs, docs, MCP servers, CLIs'' from an OpenAPI specification'
+  reason: A 'build' in Stainless is an SDK generation run from an OpenAPI spec, so these operations realise
+    SDK & client library generation. Alternative reading as generic continuous-integration build management
+    (BC-4210.10) keeps confidence at 0.7.

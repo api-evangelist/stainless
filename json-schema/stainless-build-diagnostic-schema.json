@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/stainless/main/json-schema/stainless-build-diagnostic-schema.json",
+  "title": "BuildDiagnostic",
+  "x-generated": "2026-10-05",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/stainless-builds-api-openapi.yml#/components/schemas/BuildDiagnostic",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "The kind of diagnostic."
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "fatal",
+        "error",
+        "warning",
+        "note"
+      ],
+      "description": "The severity of the diagnostic."
+    },
+    "ignored": {
+      "type": "boolean",
+      "description": "Whether the diagnostic is ignored in the Stainless config."
+    },
+    "message": {
+      "type": "string",
+      "description": "A description of the diagnostic."
+    },
+    "more": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/BuildDiagnosticMore"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "oas_ref": {
+      "type": "string",
+      "description": "A JSON pointer to a relevant field in the OpenAPI spec."
+    },
+    "config_ref": {
+      "type": "string",
+      "description": "A JSON pointer to a relevant field in the Stainless config."
+    }
+  },
+  "required": [
+    "code",
+    "level",
+    "ignored",
+    "message",
+    "more"
+  ],
+  "$defs": {
+    "BuildDiagnosticMore": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "markdown"
+              ]
+            },
+            "markdown": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "markdown"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "raw"
+              ]
+            },
+            "raw": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "raw"
+          ]
+        }
+      ]
+    }
+  }
+}

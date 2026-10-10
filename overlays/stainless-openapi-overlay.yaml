@@ -1,0 +1,7 @@
+generated: 2026-10-10
+method: derived
+source:
+  - url: https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless/stainless-v0-4ec3b12ce6b2e1e2eb800fab7dea5fc272c8c7aaf364a5305af5f4eda95e07b3.yml
+    note: OpenAPI spec fetched per correction request
+overlay:
+  actions: []

@@ -1,0 +1,149 @@
+generated: '2026-10-10'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 11
+  own: 5
+  other_domain: 4
+  platform: 2
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - source
+  - support
+  - website
+hosts:
+- host: api.googleapis.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: googleapis.com
+  role: api
+  relation: other-domain
+- host: api.none.invalid
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: none.invalid
+  role: api
+  relation: other-domain
+- host: api.stainless.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: stainless.com
+  role: api
+  relation: own
+- host: app.stainless.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  types:
+  - Login
+  serves: []
+  registrable_domain: stainless.com
+  role: identity
+  relation: own
+- host: docs.stainless.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Welcome to Stainless | Stainless
+  status: 200
+  registrable_domain: stainless.com
+  role: docs
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: none.invalid
+  found_by:
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: none.invalid
+  role: other
+  relation: other-domain
+- host: storage.googleapis.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  types:
+  - OpenAPI
+  serves: []
+  registrable_domain: googleapis.com
+  role: other
+  relation: other-domain
+- host: support.stainless.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - well-known
+  - vendor-detect
+  types:
+  - Support
+  serves:
+  - cdn
+  vendor: cloudfront
+  registrable_domain: stainless.com
+  role: support
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.stainless.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - APIReference
+  - GettingStarted
+  - Website
+  - Portal
+  - Documentation
+  - Pricing
+  - Blog
+  - ChangeLog
+  - About
+  - TermsOfService
+  - Customers
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: stainless.com
+  role: website
+  relation: own

@@ -1,0 +1,30 @@
+generated: '2026-10-10'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://www.stainless.com/docs/sdks/configure/pagination/
+sources:
+- https://www.stainless.com/docs/sdks/configure/pagination/
+- https://www.stainless.com/docs/quickstart-studio/
+- https://www.stainless.com/docs/quickstart-cli/
+- https://www.stainless.com/docs/docs-platform/quickstart/
+idempotency:
+  coverage: none
+  evidence: The provided pages do not describe any idempotency header, the operations it applies to, or a retention window.
+pagination:
+  style: 'Stainless supports multiple pagination schemes defined in the stainless.yml config: cursor, cursor_id, cursor_url, offset, and page_number.'
+  params:
+  - limit (integer)
+  - offset (integer) for offset pagination
+  - page number (integer) for page_number pagination
+  - starting_after / ending_before (string) for cursor_id pagination
+  - next / starting_after (string) for cursor pagination
+  - page_size (integer) for cursor_url pagination
+  response_fields:
+  - data (array of items)
+  - my_data (array of items) as example
+  - next (string) cursor or URL
+  - next_cursor (string) for cursor pagination
+  - next_cursor_id_param (string) for cursor_id pagination
+  evidence: The pagination documentation lists the required request parameters (limit, offset, page number, cursor fields) and response fields
+    (data array, next cursor or URL) for each supported scheme.
+docs: https://www.stainless.com/docs/sdks/configure/pagination/

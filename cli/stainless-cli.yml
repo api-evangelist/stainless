@@ -1,0 +1,28 @@
+generated: '2026-10-10'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://www.stainless.com/docs/quickstart-cli/
+sources:
+- https://www.stainless.com/docs/quickstart-cli/
+- https://www.stainless.com/docs/sdks/
+- https://www.stainless.com/docs/sdks/configure/
+- https://www.stainless.com/docs/sdks/configure/client/
+install:
+- method: brew
+  command: brew install stainless-api/tap/stl
+commands:
+- group: auth
+  commands:
+  - stl auth login
+- group: project
+  commands:
+  - stl init
+- group: preview
+  commands:
+  - stl preview
+  - stl preview --watch
+- group: builds
+  commands:
+  - stl builds create --branch <branch>
+binary: stl
+docs: https://www.stainless.com/docs/quickstart-cli/

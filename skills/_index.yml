@@ -1,0 +1,18 @@
+generated: '2026-10-04'
+method: generated
+generator: extract-docs-artifacts.py skills (local)
+source: openapi/stainless-projects-api-openapi.yml
+skills:
+- file: skills/stainless-create-and-list-projects.md
+  name: stainless-create-and-list-projects
+  api: openapi/stainless-projects-api-openapi.yml
+  operations:
+  - postV0Projects
+  - getV0Projects
+- file: skills/stainless-builds-diagnostics.md
+  name: stainless-builds-diagnostics
+  api: openapi/stainless-builds-api-openapi.yml
+  operations:
+  - getV0Builds
+  - getV0BuildsByBuildId
+  - getV0BuildsByBuildIdDiagnostics

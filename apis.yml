@@ -1,36 +1,38 @@
 aid: stainless
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/stainless/refs/heads/main/apis.yml
+
+url: https://raw.githubusercontent.com/api-evangelist/stainless/refs/heads/main/apis.yml
+
 name: Stainless
-description: >-
-  Stainless is an API developer experience platform that generates best-in-class
-  SDKs, interactive documentation, production-ready CLI tools, MCP servers, and
-  Terraform providers directly from an OpenAPI specification. Trusted by Anthropic,
-  Cloudflare, Google, and OpenAI, Stainless automates the boilerplate of client
-  library development including HTTP requests, retries with exponential backoff,
-  streaming, and pagination. The platform supports TypeScript, Python, Go, Java,
-  Kotlin, Ruby, C#, PHP, and Terraform, with Rust and Swift in development.
+
+description: Stainless is an API developer experience platform that generates best-in-class SDKs, interactive documentation, production-ready
+  CLI tools, MCP servers, and Terraform providers directly from an OpenAPI specification. Trusted by Anthropic, Cloudflare, Google, and OpenAI,
+  Stainless automates the boilerplate of client library development including HTTP requests, retries with exponential backoff, streaming, and
+  pagination. The platform supports TypeScript, Python, Go, Java, Kotlin, Ruby, C#, PHP, and Terraform, with Rust and Swift in development.
+
 tags:
-  - Code Generation
-  - Documentation
-  - Developer Experience
-  - MCP
-  - Platform
-  - SDK
-  - Terraform
-  - SDK Generation
-  - OpenAPI
+- Code Generation
+- Documentation
+- Developer Experience
+- MCP
+- Platform
+- SDK
+- Terraform
+- SDK Generation
+- OpenAPI
+
 tags_raw:
-  - Code Generation
-  - Documentation
-  - Developer Experience
-  - MCP
-  - Platform
-  - SDKs
-  - Terraform
-  - SDK Generation
-  - OpenAPI
+- Code Generation
+- Documentation
+- Developer Experience
+- MCP
+- Platform
+- SDKs
+- Terraform
+- SDK Generation
+- OpenAPI
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -43,6 +45,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -57,52 +60,112 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/stainless.png
+
 access: 3rd-Party
+
 created: '2025-01-08'
+
 modified: '2026-05-02'
+
 position: Consuming
+
 segments:
-  - SDKs
-  - Developer Tooling
+- SDKs
+- Developer Tooling
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+specificationVersion: '0.23'
+
 common:
-  - type: CapabilityMap
-    url: capabilities/stainless-capability-edges.yml
-    name: Stainless Business Capability Map
-  - type: VendorFacets
-    url: vendor-facets/stainless-vendor-facets.yml
-  - type: Website
-    url: https://www.stainless.com/
-  - type: AgenticAccess
-    url: agentic-access/stainless-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/stainless-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/stainless-domain-security.yml
-  - type: Authentication
-    url: authentication/stainless-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/stainless-api
-  - url: https://www.stainless.com/
-    type: Portal
-  - url: https://www.stainless.com/docs/
-    type: Documentation
-  - url: https://www.stainless.com/pricing
-    type: Pricing
-  - url: https://www.stainless.com/blog
-    type: Blog
-  - url: https://www.stainless.com/changelog
-    type: ChangeLog
-  - url: https://app.stainless.com/login
-    type: Login
-  - url: https://www.stainless.com/company
-    type: About
-  - url: https://github.com/stainless-api
-    type: GitHubOrganization
-  - url: https://www.stainless.com/legal/terms-conditions
-    type: TermsOfService
-  - url: https://www.stainless.com/customers
-    type: Customers
+- type: FinOps
+  url: finops/stainless-finops.yml
+- type: RateLimits
+  url: rate-limits/stainless-rate-limits.yml
+- type: Plans
+  url: plans/stainless-plans-pricing.yml
+- type: Spectral
+  url: rules/stainless-rules.yml
+- type: JSONLD
+  url: json-ld/stainless-context.jsonld
+- type: Vocabulary
+  url: vocabulary/stainless-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/stainless-data-model.yml
+- type: CLI
+  url: cli/stainless-cli.yml
+- type: Conventions
+  url: conventions/stainless-conventions.yml
+- type: Security
+  url: security/stainless-vulnerability-disclosure.yml
+- type: Conformance
+  url: conformance/stainless-conformance.yml
+- type: LLMsTxt
+  url: llms/stainless-llms.txt
+- type: SecurityTxt
+  url: well-known/stainless-security.txt
+- type: SecurityTxt
+  url: well-known/stainless-app-security.txt
+- type: SecurityTxt
+  url: well-known/stainless-api-security.txt
+- type: WellKnown
+  url: well-known/stainless-well-known.yml
+- type: Hosts
+  url: hosts/stainless-hosts.yml
+- type: Vendors
+  url: vendors/stainless-vendors.yml
+- type: Support
+  url: https://support.stainless.com/
+- type: APIReference
+  url: https://www.stainless.com/docs/reference/
+- type: GettingStarted
+  url: https://www.stainless.com/docs/quickstart-studio
+- type: CapabilityMap
+  url: capabilities/stainless-capability-edges.yml
+  name: Stainless Business Capability Map
+- type: VendorFacets
+  url: vendor-facets/stainless-vendor-facets.yml
+- type: Website
+  url: https://www.stainless.com/
+- type: AgenticAccess
+  url: agentic-access/stainless-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/stainless-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/stainless-domain-security.yml
+- type: Authentication
+  url: authentication/stainless-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/stainless-api
+- type: OpenAPI
+  url: https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless/stainless-v0-4ec3b12ce6b2e1e2eb800fab7dea5fc272c8c7aaf364a5305af5f4eda95e07b3.yml
+- url: https://www.stainless.com/
+  type: Portal
+- url: https://www.stainless.com/docs/
+  type: Documentation
+- url: https://www.stainless.com/pricing
+  type: Pricing
+- url: https://www.stainless.com/blog
+  type: Blog
+- url: https://www.stainless.com/changelog
+  type: ChangeLog
+- url: https://app.stainless.com/login
+  type: Login
+- url: https://www.stainless.com/company
+  type: About
+- url: https://github.com/stainless-api
+  type: GitHubOrganization
+- url: https://www.stainless.com/legal/terms-conditions
+  type: TermsOfService
+- url: https://www.stainless.com/customers
+  type: Customers
+
 apis:
 - aid: stainless:stainless
   name: Stainless SDK Generator
@@ -204,6 +267,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-build-target-outputs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/stainless-target-schema.json
 - aid: stainless:stainless-builds-api
   name: Stainless Builds API
   description: The Builds API from Stainless — 4 operation(s) for builds.
@@ -213,6 +278,14 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-builds-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/stainless-build-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-build-diagnostic-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-file-input-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-target-schema.json
 - aid: stainless:stainless-orgs-api
   name: Stainless Orgs API
   description: The Orgs API from Stainless — 2 operation(s) for orgs.
@@ -224,6 +297,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-orgs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/stainless-org-schema.json
 - aid: stainless:stainless-projects-api
   name: Stainless Projects API
   description: The Projects API from Stainless — 9 operation(s) for projects.
@@ -235,6 +310,16 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-projects-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/stainless-project-branch-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-project-branch-minimal-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-project-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-file-input-schema.json
+  - type: JSONSchema
+    url: json-schema/stainless-target-schema.json
 - aid: stainless:stainless-user-api
   name: Stainless User API
   description: The User API from Stainless — 1 operation(s) for user.
@@ -244,6 +329,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-user-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/stainless-user-schema.json
 - aid: stainless:stainless-spec-api
   name: Stainless Spec API
   description: The Spec API from Stainless — 1 operation(s) for spec.
@@ -262,14 +349,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/stainless-open-api-api-openapi.yml
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-specificationVersion: '0.23'
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The OpenAPI file at the requested URL does not appear to belong to Stainless, lacking company-specific info.
+  evidence:
+    - url: https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless/stainless-v0-4ec3b12ce6b2e1e2eb800fab7dea5fc272c8c7aaf364a5305af5f4eda95e07b3.yml
+      status: 200
+  checked: '2026-10-10'
+
 x-correction-request:
   requested: '2026-10-03'
   source:
   - apis.io Influence-tier request queue (kinlane-test-influence)
   request: 'Influence-tier artifact submission ebe1e0d5 (2026-09-23): OpenAPI at https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless/stainless-v0-4ec3b12ce6b2e1e2eb800fab7dea5fc272c8c7aaf364a5305af5f4eda95e07b3.yml.
-    Verify it is live and real (MCP: initialize/tools/list or server card; OpenAPI: paths), then record it as a
-    pointer and harvest it.'
+    Verify it is live and real (MCP: initialize/tools/list or server card; OpenAPI: paths), then record it as a pointer and harvest it.'
+x-enrichment:
+  date: '2026-10-10'
+  status: enriched
+  artifacts_added: 35
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

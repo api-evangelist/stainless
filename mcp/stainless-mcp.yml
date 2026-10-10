@@ -1,0 +1,10 @@
+generated: '2026-10-05'
+method: derived
+source: correction-request
+deployment:
+  mode: none
+  endpoint: "https://none.invalid"
+  install: ""
+  package: ""
+  auth: unknown
+  verified: derived

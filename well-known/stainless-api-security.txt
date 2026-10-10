@@ -1,0 +1,4 @@
+Contact: mailto:security@stainless.com
+Expires: 2026-12-31T11:59:00Z
+Hiring: https://www.stainless.com/jobs
+Preferred-Languages: en

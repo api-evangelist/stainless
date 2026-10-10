@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: Stainless OpenAPI API
   version: 1.0.0
-  description: 'Operations tagged Openapi across 2 of this provider''s published API definitions: stainless.yml, stainless-sdk-openapi.yml. Each path carries the servers of the definition it was published in.'
+  description: 'Operations tagged Openapi across 4 of this provider''s published API definitions: stainless-openapi.yml, stainless-openapi.yml, stainless-sdk-openapi.yml, stainless-v0.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: v1
 tags:
@@ -30,5 +30,7 @@ paths:
     servers:
     - url: v1
 x-refined-from:
-- stainless.yml
+- stainless-openapi.yml
+- stainless-openapi.yml
 - stainless-sdk-openapi.yml
+- stainless-v0.yml

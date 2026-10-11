@@ -6,6 +6,7 @@ specification: FinOps Framework
 specificationVersion: '1.0'
 provider: Stainless
 providerId: stainless
+name: Stainless API FinOps
 publisherName: Stainless
 serviceCategory: API
 created: '2026-05-04'

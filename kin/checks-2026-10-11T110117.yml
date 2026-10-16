@@ -2,23 +2,21 @@
 kin_checks:
   slug: stainless
   schema_version: 0.23.0
-  scored_at: '2026-10-03'
-  run_ts: 2026-10-03T024842
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
     apply in `na`. Everything else in rubric/scoring-0.23.0.yml was earned; counts
     below let you verify that.
   counts:
     total: 153
-    earned: 26
-    partial: 21
+    earned: 27
+    partial: 20
     missed: 78
     na: 28
   checks:
   - id: newsroom_present
     status: missed
   - id: leadership_present
-    status: missed
-  - id: multiple_apis
     status: missed
   - id: base_url_per_api
     status: missed
@@ -30,29 +28,33 @@ kin_checks:
     status: missed
   - id: openapi_3_2
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: openapi_3_0
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
-  - id: operations_description_coverage
+  - id: info_complete
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: error_responses_documented
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: examples_present
     status: missed
-  - id: components_reuse
+  - id: security_schemes_defined
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
+      they were modelled by API Evangelist, not published by the provider
+  - id: security_applied
+    status: missed
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: webhooks_or_callbacks
     status: missed
-    detail: 0 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 0 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: asyncapi_present
     status: missed
@@ -186,53 +188,49 @@ kin_checks:
     status: partial
   - id: openapi_3_1
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
-      they were modelled by API Evangelist, not published by the provider
-  - id: info_complete
-    status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: servers_defined
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: servers_resolvable
     status: partial
   - id: operations_summary_coverage
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
+      they were modelled by API Evangelist, not published by the provider
+  - id: operations_description_coverage
+    status: partial
+    detail: 6 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: operations_tagged
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: operations_operation_ids
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: response_coverage
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
-  - id: security_schemes_defined
+  - id: components_reuse
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
-      they were modelled by API Evangelist, not published by the provider
-  - id: security_applied
-    status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 2 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: oauth_flows_current
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: credentials_not_in_query
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: oauth_scopes_enumerated
     status: partial
-    detail: 5 of 5 openapi documents pass; credited at 0% because the documents say
+    detail: 7 of 7 openapi documents pass; credited at 0% because the documents say
       they were modelled by API Evangelist, not published by the provider
   - id: rate_limits_documented
     status: partial

@@ -345,6 +345,8 @@ apis:
   description: The Open API API from Stainless — 1 operation(s) for open api.
   humanURL: https://www.stainless.com/
   tags:
+  - OpenAPI
+  tags_raw:
   - Open API
   properties:
   - type: OpenAPI
